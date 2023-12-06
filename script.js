@@ -20,19 +20,21 @@ const limparDados = () => {
     const apagar = document.querySelector("#apagar");
     apagar.addEventListener("click", () =>{
         const resultado = document.querySelector("#resultado")
-        resultado.innerHTML = '';
+        resultado.textContent = '';
     })
 }
 
 function mostrarDados(dados) {
     let resultado = document.querySelector("#resultado");
     if (dados.erro) {
-        resultado.innerHTML = "Não foi possível localizar o endereço!";
+        resultado.textContent = "Não foi possível localizar o endereço!";
     } else {
         resultado.innerHTML = `
-    <p>Endereço: ${dados.logradouro}</p>
+   
+    Endereço: ${dados.logradouro}
     <p>Bairro: ${dados.bairro}</p>
     <p>Cidade: ${dados.localidade} - ${dados.uf}</p>
+
     `
     }
 }
